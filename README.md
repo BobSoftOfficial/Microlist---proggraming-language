@@ -11,9 +11,12 @@ then go to the extracted folder in the terminal and open it run the command
 ```
 go build -o microlist main.go
 ```
-them move microlist to your bin directory
+if it says there is no main.go type "ls" and then move to that folder using cd
+them move microlist to your home directory
+if you have done that move it to your bin directory
 ```
-sudo mv microlist /bin/
+sudo mv ~/microlist /bin/
+
 ```
 
 YOU INSTALLED MICROLIST!!!!!
