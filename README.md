@@ -40,7 +40,7 @@ ml.
 ```
 
 lets make a simple program!
-make a file with the .ml extention and open it...
+make a file with the .mlist extention and open it...
 in every ml only can be 8 bits stored but that is no problem!
 lets make hello, world
 ```
@@ -51,7 +51,7 @@ lets make hello, world
 jipee you made your first program!!!
 run it with:
 ```
-microlist <filename>.ml
+microlist <filename>.mlist
 ```
 lets see if it workes!
 
