@@ -6,13 +6,14 @@ an 8-bit abstract proggraming language
 # how to download
 first download the zip file and extract it
 (if you havent already) install go 1.19 from https://go.dev/doc/install
+move the folder to your home directory
 then go to the extracted folder in the terminal and open it run the command 
 ```
 go build -o microlist main.go
 ```
 them move microlist to your bin directory
 ```
-sudo mv microlist /usr/local/bin/
+sudo mv microlist /bin/
 ```
 
 YOU INSTALLED MICROLIST!!!!!
