@@ -18,6 +18,17 @@ if you have done that move it to your bin directory
 sudo mv ~/microlist /bin/
 
 ```
+# OPTIONAL BUT IMPORTANT
+you also now have lua-ml.sh
+compile it
+```
+chmod +x lua-ml.sh
+```
+move it to home and
+place it in bin
+```
+sudo mv ~/lua-ml /bin/
+```
 
 YOU INSTALLED MICROLIST!!!!!
 
