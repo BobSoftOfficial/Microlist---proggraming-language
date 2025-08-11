@@ -4,7 +4,7 @@ cd src
 touch main.lua
 echo 'print("Hello, from lua")' > main.lua
 touch script.c
-echo "#include <stdio>" > script.c
+echo "#include <stdio.h>" > script.c
 cd ..
 mkdir st
 cd st
