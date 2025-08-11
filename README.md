@@ -18,7 +18,7 @@ if you have done that move it to your bin directory
 sudo mv ~/microlist /bin/
 
 ```
-# OPTIONAL BUT IMPORTANT
+# OPTIONAL BUT IMPORTANT (use after tutoriol)
 you also now have lua-ml.sh
 compile it
 ```
@@ -29,6 +29,14 @@ place it in bin
 ```
 sudo mv ~/lua-ml /bin/
 ```
+okey now make a new project with
+```
+mkdir <name of project> && cd <name of project>
+lua-ml
+```
+this will create a new project with 2 .mlist files and 2 src files the main one main.lua and the one who works with lua script.c
+why lua and c?
+well they are realy simple and work well together
 
 YOU INSTALLED MICROLIST!!!!!
 
