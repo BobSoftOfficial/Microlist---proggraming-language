@@ -2,7 +2,7 @@
 mkdir src
 cd src
 touch main.lua
-echo "print("Hello, from lua")" > main.lua
+echo 'print("Hello, from lua")' > main.lua
 touch script.c
 echo "#include <stdio>" > script.c
 cd ..
