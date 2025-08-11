@@ -63,7 +63,7 @@ see in the hello world program we made you see we did this
 why the 1?
 well the 1 is the name of the ml this is why:
 we can use "name of ml[]" to get ml's in other ml's
-IMPORTANT and ml without a dot is like a variable it only stores info
+IMPORTANT an ml without a dot is like a variable it only stores info
 ```
 1 ml
 "hello"
