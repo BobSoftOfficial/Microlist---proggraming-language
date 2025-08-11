@@ -56,7 +56,7 @@ microlist <filename>.ml
 lets see if it workes!
 
 now its getting more complicated... but hold on
-se in the hello world program we made you see we did this
+see in the hello world program we made you see we did this
 ```
 1 ml.
 ```
