@@ -217,32 +217,31 @@ func (vm *VM) Execute() error {
 			currentList.Values = make([]byte, len(refList.Values))
 			copy(currentList.Values, refList.Values)
 			
-		case OP_HALT:
-			// Output all lists that can output (ml.) - clean output only
-			for id := 1; id <= len(vm.Lists)+10; id++ { // Check in order
-				if list, exists := vm.Lists[id]; exists && list.CanOutput {
-					for _, value := range list.Values {
-						if value >= 32 && value <= 126 {
-							// Printable ASCII
-							fmt.Printf("%c", value)
-						} else {
-							// Non-printable, show as number in brackets
-							fmt.Printf("[%d]", value)
-						}
-					}
-					fmt.Println() // New line after each output list
-				}
-			}
-			return nil
-			
-		default:
-			return fmt.Errorf("unknown opcode: %d", instr.OpCode)
+	case OP_HALT:
+		// ✅ Output alle lijsten die CanOutput == true hebben, gesorteerd op ID
+		var ids []int
+		for id := range vm.Lists {
+			ids = append(ids, id)
 		}
-		
-		vm.PC++
-	}
+		sort.Ints(ids)
 	
-	return nil
+		for _, id := range ids {
+			list := vm.Lists[id]
+			if list.CanOutput {
+				for _, value := range list.Values {
+					if value >= 32 && value <= 126 {
+						// Printbare ASCII
+						fmt.Printf("%c", value)
+					} else {
+						// Niet-printbaar → getal in blokhaken
+						fmt.Printf("[%d]", value)
+					}
+				}
+				fmt.Println() // Nieuwe regel na elke outputlijst
+			}
+		}
+		return nil
+
 }
 
 // Bytecode serialization for binary output
