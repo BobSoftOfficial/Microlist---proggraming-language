@@ -279,8 +279,8 @@ func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("MicroList Compiler v2.0")
 		fmt.Println("Usage:")
-		fmt.Println("  microlist <source.ml>           - Compile and run")
-		fmt.Println("  microlist -c <source.ml>        - Compile to binary")
+		fmt.Println("  microlist <source.mlist>           - Compile and run")
+		fmt.Println("  microlist -c <source.mlist>        - Compile to binary")
 		fmt.Println("  microlist -i                    - Interactive mode")
 		fmt.Println("")
 		fmt.Println("MicroList Syntax Examples:")
@@ -334,7 +334,7 @@ func main() {
 }
 
 func runInteractiveMode() {
-	fmt.Println("MicroList Interactive Mode v2.0")
+	fmt.Println("MicroList Interactive Mode v1.0")
 	fmt.Println("Enter your code line by line.")
 	fmt.Println("Commands: 'run' to execute, 'clear' to reset, 'quit' to exit")
 	fmt.Println("Example:")
