@@ -213,35 +213,37 @@ func (vm *VM) Execute() error {
 				return fmt.Errorf("referenced list %d does not exist", instr.RefID)
 			}
 			
-			// Clear current list and copy values from referenced list (replace, don't append)
-			currentList.Values = make([]byte, len(refList.Values))
-			copy(currentList.Values, refList.Values)
+			// Copy values from referenced list
+			currentList.Values = append(currentList.Values, refList.Values...)
 			
-	case OP_HALT:
-		// ✅ Output alle lijsten die CanOutput == true hebben, gesorteerd op ID
-		var ids []int
-		for id := range vm.Lists {
-			ids = append(ids, id)
-		}
-		sort.Ints(ids)
-	
-		for _, id := range ids {
-			list := vm.Lists[id]
-			if list.CanOutput {
-				for _, value := range list.Values {
-					if value >= 32 && value <= 126 {
-						// Printbare ASCII
-						fmt.Printf("%c", value)
-					} else {
-						// Niet-printbaar → getal in blokhaken
-						fmt.Printf("[%d]", value)
+		case OP_HALT:
+			// Output all lists that can output (ml.)
+			fmt.Println("=== MicroList Output ===")
+			for id := 1; id <= len(vm.Lists)+10; id++ { // Check in order
+				if list, exists := vm.Lists[id]; exists && list.CanOutput {
+					fmt.Printf("List %d output:\n", id)
+					for _, value := range list.Values {
+						if value >= 32 && value <= 126 {
+							// Printable ASCII
+							fmt.Printf("%c", value)
+						} else {
+							// Non-printable, show as number
+							fmt.Printf("[%d]", value)
+						}
 					}
+					fmt.Println()
 				}
-				fmt.Println() // Nieuwe regel na elke outputlijst
 			}
+			return nil
+			
+		default:
+			return fmt.Errorf("unknown opcode: %d", instr.OpCode)
 		}
-		return nil
-
+		
+		vm.PC++
+	}
+	
+	return nil
 }
 
 // Bytecode serialization for binary output
