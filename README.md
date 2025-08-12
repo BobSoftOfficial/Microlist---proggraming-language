@@ -48,7 +48,7 @@ there is only one command in microlist it is....
 ml
 ```
 
-there 2 types of ml, ml that give output and ml's that dont give output
+there 2 types of ml, ml that give output and ml's that dont give output,
 no output:
 ```
 ml
